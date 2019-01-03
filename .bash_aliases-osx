@@ -17,7 +17,7 @@ alias fixfiles='find . -type f -exec chmod 644 {} \;'
 
 # Spin up a new barebones WordPress theme for development.  Depends on BitBucket-CLI (https://bitbucket.org/zhemao/bitbucket-cli)
 function wpcreate {
-	export THEMEPATH=/mnt/Dev-Server/storage/SWD/wp-content/themes
+	export THEMEPATH=/mnt/Dev-Server/SWD/wp-content/themes
 
 	echo "Creating new repo for:" $1
 	bb create --private $1
@@ -49,9 +49,9 @@ alias df='df -h'
 alias du='du -h -c'
 alias ps='ps'
 alias mkdir='mkdir -p'
-alias grep='grep -n --colour'
+alias grep='grep --colour'
 alias g="grep"
-alias cls='clear'
+alias cls='clear; stats'
 
 # Folder bookmarks with quick jump function
 export MARKPATH=$HOME/.marks
