@@ -1,0 +1,11 @@
+#
+# Automounter master map
+#
++auto_master		# Use directory service
+/net			-hosts		-nobrowse,hidefromfinder,nosuid
+/home			auto_home	-nobrowse,hidefromfinder
+/Network/Servers	-fstab
+/-			-static
+/mnt/File-Dump		auto_smb
+/mnt/Octoprint		auto_oct
+/-					auto_nfs	-nobrowse,nosuid

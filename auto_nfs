@@ -1,0 +1,2 @@
+/mnt/Dev-Server/SWD	-fstype=nfs,rw,bg,hard,intr,tcp nfs://192.168.1.75:/media/storage/SWD
+/mnt/Dev-Server/KSolo	-fstype=nfs,rw,bg,hard,intr,tcp nfs://192.168.1.75:/media/storage/KSolo
