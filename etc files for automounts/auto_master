@@ -6,6 +6,7 @@
 /home			auto_home	-nobrowse,hidefromfinder
 /Network/Servers	-fstab
 /-			-static
-/mnt/File-Dump		auto_smb
-/mnt/Octoprint		auto_oct
-/-					auto_nfs	-nobrowse,nosuid
+/Volumes/File-Dump	auto_smb
+/Volumes/Octoprint	auto_oct
+/Volumes/Dev		auto_dev
+/Volumes/Downloads	auto_ds
