@@ -1,5 +1,0 @@
-Warez		-fstype=smbfs	://guest@10.0.0.7/Warez
-Home-Bak	-fstyoe-smbfs	://guest@10.0.0.7/Home
-Backups		-fstype=smbfs	://guest@10.0.0.7/Backups2
-Media		-fstype=smbfs	://guest@10.0.0.7/Media
-Cam-Dump	-fstype=smbfs	://guest@10.0.0.7/Cam-Dump

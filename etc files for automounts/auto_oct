@@ -1,4 +1,0 @@
-Timelapse	-fstype=smbfs	://pi:tannis08@10.0.0.9/timelapse
-Watched		-fstype=smbfs	://pi:tannis08@10.0.0.9/watched
-Uploads		-fstype=smbfs	://pi:tannis08@10.0.0.9/uploads
-octoprint	-fstype=smbfs	://pi:tannis08@10.0.0.9/octoprint
