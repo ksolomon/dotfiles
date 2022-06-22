@@ -80,9 +80,14 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Alias definitions.
+# Default Alias definitions.
 if [ -f ~/dotfiles/.bash_aliases ]; then
     . ~/dotfiles/.bash_aliases
+fi
+
+# Local Alias definitions.
+if [ -f ~/.local_aliases ]; then
+    . ~/.local_aliases
 fi
 
 # ls colors
