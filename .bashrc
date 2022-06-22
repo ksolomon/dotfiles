@@ -43,14 +43,7 @@ PROMPT_HOST_COLOR='41m'
 PROMPT_DIR_COLOR='41m'
 fi
 
-case ${TERM} in
-        vt100)
-PS1='[\u@${PROMPT_HOSTNAME} \w] \#\$ '
-        ;;
-        *)
 PS1='\e[${PROMPT_HOST_COLOR}\u@${PROMPT_HOSTNAME}: \[\e[${PROMPT_DIR_COLOR}\]\w \[\$\e[m '
-        ;;
-esac
 #####################
 # End Custom Prompt #
 #####################
@@ -65,13 +58,13 @@ xterm*|rxvt*)
 esac
 
 # Alias definitions.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/dotfiles/.bash_aliases ]; then
+    . ~/dotfiles/.bash_aliases
 fi
 
 # ls colors
 export LS_OPTIONS='--color=auto'
-eval `dircolors -b ~/.dircolorsrc`
+eval `dircolors -b ~/dotfiles/.dircolorsrc`
 
 # enable programmable completion features
 if [ -f /etc/bash_completion ]; then
@@ -80,5 +73,5 @@ fi
 
 export PATH=$PATH:/usr/local/git/bin:~/bin:~/.composer/vendor/bin
 
-# set up GIT_EDITOR to use Sublime Text/Textmate
-export GIT_EDITOR="rmate --name 'Git Commit Message' -w -l 1"
+# set up GIT_EDITOR to use nano
+export GIT_EDITOR="nano"
