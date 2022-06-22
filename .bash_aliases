@@ -6,6 +6,9 @@ alias ld='ls -d $LS_OPTIONS -af --color'  # directories only!
 alias dir='ls -alh'
 alias del='rm'
 
+# Make dmesg human-parseable
+alias dmesg='dmesg -H'
+
 # Search process list
 psg() {
     ps aux | grep -v grep | grep $1 --color
