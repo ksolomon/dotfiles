@@ -10,8 +10,10 @@ export EDITOR=nano
 # Expand the history size
 HISTFILESIZE=100000000
 HISTSIZE=100000
+
 # Set to avoid spamming up the history file
 HISTIGNORE="cd:ls:[bf]g:clear:exit"
+
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 
