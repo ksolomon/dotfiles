@@ -52,7 +52,6 @@ PS1='[\u@${PROMPT_HOSTNAME} \w] \#\$ '
 PS1='\e[${PROMPT_HOST_COLOR}\u@${PROMPT_HOSTNAME}: \[\e[${PROMPT_DIR_COLOR}\]\w \[\$\e[m '
         ;;
 esac
-fi
 
 source ~/dotfiles/git-prompt.sh
 
