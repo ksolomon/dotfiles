@@ -108,5 +108,4 @@ fi
 
 export PATH=$PATH:/usr/local/git/bin:~/bin:~/.composer/vendor/bin
 
-# set up GIT_EDITOR to use Sublime Text/Textmate
-export GIT_EDITOR="rmate --name 'Git Commit Message' -w -l 1"
+export GIT_EDITOR="nano"
