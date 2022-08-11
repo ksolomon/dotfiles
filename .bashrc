@@ -10,8 +10,10 @@ export EDITOR=nano
 # Expand the history size
 HISTFILESIZE=100000000
 HISTSIZE=100000
+
 # Set to avoid spamming up the history file
 HISTIGNORE="cd:ls:[bf]g:clear:exit"
+
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 
@@ -41,7 +43,6 @@ PROMPT_DEF_COLOR='0;39m'
 if [ ${UID} -eq 0 ]; then
 PROMPT_HOST_COLOR='41m'
 PROMPT_DIR_COLOR='41m'
-fi
 
 case ${TERM} in
         vt100)
@@ -51,6 +52,28 @@ PS1='[\u@${PROMPT_HOSTNAME} \w] \#\$ '
 PS1='\e[${PROMPT_HOST_COLOR}\u@${PROMPT_HOSTNAME}: \[\e[${PROMPT_DIR_COLOR}\]\w \[\$\e[m '
         ;;
 esac
+fi
+
+source ~/dotfiles/git-prompt.sh
+
+function changes_in_branch() {
+    if [ -d .git ]; then
+        if expr length + "$(git status -s)" 2>&1 > /dev/null; then
+            echo -ne "\033[0;33m$(__git_ps1)\033[0m";
+        else
+            echo -ne "\033[0;32m$(__git_ps1)\033[0m"; fi;
+    fi
+}
+
+GIT_PS1_DESCRIBE_STYLE='contains'
+GIT_PS1_SHOWCOLORHINTS='y'
+GIT_PS1_SHOWDIRTYSTATE='y'
+GIT_PS1_SHOWSTASHSTATE='y'
+GIT_PS1_SHOWUNTRACKEDFILES='y'
+GIT_PS1_SHOWUPSTREAM='auto'
+
+PS1='\[\033[${PROMPT_HOST_COLOR}\]\[\033[0m\033[${PROMPT_HOST_COLOR}\]\u\[\033[${PROMPT_HOST_COLOR}\]@\[\033[${PROMPT_HOST_COLOR}\]${PROMPT_HOSTNAME} \[\033[${PROMPT_DIR_COLOR}\]\w\[\033[0m\]$(changes_in_branch)\n\[\033[${PROMPT_HOST_COLOR}\]└─\[\033[0m\033[${PROMPT_HOST_COLOR}\] \$\[\033[0m\] '
+
 #####################
 # End Custom Prompt #
 #####################
@@ -64,9 +87,14 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Alias definitions.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+# Default Alias definitions.
+if [ -f ~/dotfiles/.bash_aliases ]; then
+    . ~/dotfiles/.bash_aliases
+fi
+
+# Local Alias definitions.
+if [ -f ~/.local_aliases ]; then
+    . ~/.local_aliases
 fi
 
 # ls colors
