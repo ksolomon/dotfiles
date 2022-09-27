@@ -1,22 +1,19 @@
-[difftool "sourcetree"]
-	cmd = /Applications/DiffFork.app/Contents/SharedSupport/Support/bin/difffork -w \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[user]
-	name = Keith Solomon
-	email = keith@solowebdeisgns.net
-[push]
-	default = simple
 [core]
-	excludesfile = /Users/keith/.gitignore
+	autocrlf = false
+	fileMode = false
+	excludesfile = ~/.gitignore_global
+[user]
+	email = ksolomon@gmail.com
+	name = Keith Solomon
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOCUJhZRp8heiQYf4CBE4Kb+u2zj4RL7ztOzjI5aQmvG
 [commit]
-	template = /Users/keith/.git_commit_template
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+	template = ~/.gitmessage
+# Windows: Use 1Password 8+ and uncomment below to use code signing
+	# gpgsign = true
+# [gpg]
+# 	format = ssh
+# [gpg "ssh"]
+# 	program = C:\\Users\\User\\AppData\\Local\\1Password\\app\\8\\op-ssh-sign.exe
 [help]
 	autocorrect = 1
 [alias]
