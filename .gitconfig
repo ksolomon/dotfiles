@@ -1,22 +1,37 @@
 [core]
-	autocrlf = false
-	fileMode = false
-	excludesfile = ~/.gitignore_global
+	excludesfile = $HOME/.gitignore_global
+	editor = nano
+
 [user]
-	email = ksolomon@gmail.com
 	name = Keith Solomon
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOCUJhZRp8heiQYf4CBE4Kb+u2zj4RL7ztOzjI5aQmvG
-[commit]
-	template = ~/.gitmessage
-# Windows: Use 1Password 8+ and uncomment below to use code signing
-	# gpgsign = true
-# [gpg]
-# 	format = ssh
-# [gpg "ssh"]
-# 	program = C:\\Users\\User\\AppData\\Local\\1Password\\app\\8\\op-ssh-sign.exe
+	# Uncomment next line and set email for this machine
+	# email =
+	# Uncomment next line and set signing key for this machine
+	# signingkey =
+
 [help]
 	autocorrect = 1
+
 [alias]
+	today = log --since=7am
 	lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 	lg = !"git lg1"
+
+[pull]
+	rebase = false
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+
+[diff]
+	algorithm = histogram
+
+[init]
+	defaultBranch = main
+
+[push]
+	autoSetupRemote = true
