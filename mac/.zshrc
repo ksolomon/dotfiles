@@ -5,7 +5,7 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/.composer/vendor/bin/:/Applications/L
 export ZSH_DISABLE_COMPFIX="true"
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$HOME/dotfiles/mac/.oh-my-zsh"
 
 export EDITOR='nano'
 
@@ -105,7 +105,7 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 
-source ~/dotfiles/.zsh_aliases
+source ~/dotfiles/mac/.zsh_aliases
 
 export PATH="/opt/homebrew/opt/icu4c/bin:/opt/homebrew/opt/icu4c/sbin:$PATH"
 export NVM_DIR="$HOME/.nvm"
