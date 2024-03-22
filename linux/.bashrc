@@ -47,14 +47,14 @@ PROMPT_DIR_COLOR='41m'
 PS1='\e[${PROMPT_HOST_COLOR}\u@${PROMPT_HOSTNAME}: \[\e[${PROMPT_DIR_COLOR}\]\w \[\$\e[m '
 fi
 
-source ~/dotfiles/git-prompt.sh
+source ~/dotfiles/common/git-prompt.sh
 
 function changes_in_branch() {
     if [ -d .git ]; then
-	if expr length + "$(git status -s)" 2>&1 > /dev/null; then
-	    echo -ne "\033[0;33m$(__git_ps1)\033[0m";
-	else
-	    echo -ne "\033[0;32m$(__git_ps1)\033[0m";
+        if expr length + "$(git status -s)" 2>&1 > /dev/null; then
+            echo -ne "\033[0;33m$(__git_ps1)\033[0m";
+        else
+            echo -ne "\033[0;32m$(__git_ps1)\033[0m";
         fi;
     fi
 }
@@ -82,8 +82,8 @@ xterm*|rxvt*)
 esac
 
 # Alias definitions.
-if [ -f ~/dotfiles/.bash_aliases ]; then
-    . ~/dotfiles/.bash_aliases
+if [ -f ~/dotfiles/linux/.bash_aliases ]; then
+    . ~/dotfiles/linux/.bash_aliases
 fi
 
 # Local Alias definitions.
@@ -93,14 +93,14 @@ fi
 
 # ls colors
 export LS_OPTIONS='--color=auto'
-eval `dircolors -b ~/dotfiles/.dircolorsrc`
+eval `dircolors -b ~/dotfiles/common/.dircolorsrc`
 
 # enable programmable completion features
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-export PATH=$PATH:/usr/local/git/bin:~/bin:~/.composer/vendor/bin
+export PATH=$PATH:~/bin:/usr/local/git/bin:~/.composer/vendor/bin
 
 # set up GIT_EDITOR to use nano
 export GIT_EDITOR="nano"
