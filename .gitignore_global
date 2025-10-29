@@ -1,6 +1,12 @@
-.DS_Store
-.vscode/
-node_modules/
-dist/
+# Global ignore file for Git
+
+# Folders to ignore
 build/
+dist/
+node_modules/
+notes/
+
+# Files to ignore
+.DS_Store
 yarn-error.log
+*.log
