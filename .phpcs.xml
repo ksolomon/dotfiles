@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<ruleset name="Coding Style Checks">
+  <description>Coding Style Checks.</description>
+  <ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED" />
+
+  <arg value="sp"/>
+  <arg name="colors"/>
+  <arg name="extensions" value="php,html"/>
+  <arg name="parallel" value="2048"/>
+
+  <exclude-pattern>vendor/</exclude-pattern>
+  <exclude-pattern>node_modules/</exclude-pattern>
+
+  <rule ref="WordPress">
+    <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed"/>
+    <exclude name="Generic.Functions.CallTimePassByReference"/>
+    <exclude name="Universal.WhiteSpace.PrecisionAlignment.Found"/>
+    <exclude name="WordPress.WP.I18n.NonSingularStringLiteralText"/>
+    <exclude name="WordPress.WP.I18n.NonSingularStringLiteralDomain"/>
+    <exclude name="WordPress.WP.I18n.NoEmptyStrings"/>
+    <exclude name="WordPress.WP.EnqueuedResourceParameters.MissingVersion"/>
+    <exclude name="WordPress.PHP.YodaConditions.NotYoda"/>
+    <exclude name="WordPress.PHP.NoSilencedErrors.Discouraged"/>
+    <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+    <exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+    <exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase"/>
+    <exclude name="WordPress.NamingConventions.ValidVariableName.InterpolatedVariableNotSnakeCase"/>
+    <exclude name="WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase"/>
+    <exclude name="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase"/>
+    <exclude name="WordPress.NamingConventions.ValidHookName.NotLowercase"/>
+    <exclude name="WordPress.NamingConventions.ValidHookName.UseUnderscores"/>
+    <exclude name="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid"/>
+    <exclude name="WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid"/>
+    <exclude name="WordPress.DB.SlowDBQuery.slow_db_query_tax_query"/>
+    <exclude name="WordPress.DB.SlowDBQuery.slow_db_query_meta_query"/>
+    <exclude name="WordPress.Security.NonceVerification.Recommended"/>
+    <exclude name="Squiz.Commenting.FileComment.MissingPackageTag"/>
+    <exclude name="Squiz.Commenting.FileComment.Missing"/>
+    <exclude name="Squiz.Commenting.FileComment.WrongStyle"/>
+    <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar"/>
+  </rule>
+
+  <rule ref="Internal.NoCodeFound">
+    <severity>0</severity>
+  </rule>
+</ruleset>
