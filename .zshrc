@@ -1,3 +1,7 @@
+# If you come from bash you might have to change your $PATH.
+#export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/Cellar/php@7.4/7.4.33/bin:$HOME/.composer/vendor/bin/:$PATH
+export PATH=$HOME/bin:$HOME/.composer/vendor/bin/:$PATH
+
 export ZSH_DISABLE_COMPFIX="true"
 
 # Maybe fix error
@@ -108,23 +112,32 @@ alias ohmyzsh="code ~/dotfiles/.oh-my-zsh"
 
 source ~/dotfiles/.zsh_aliases
 
-# If you come from bash you might have to change your $PATH.
-#export PATH=$HOME/bin:/usr/local/bin:/opt/homebrew/Cellar/php@7.4/7.4.33/bin:$HOME/.composer/vendor/bin/:$PATH
-export PATH=$HOME/bin:$HOME/.composer/vendor/bin/:/Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/posix:/Applications/Local.app/Contents/Resources/extraResources/lightning-services/mysql-8.0.16+6/bin/darwin/bin:/opt/homebrew/opt/icu4c/bin:/opt/homebrew/opt/icu4c/sbin:$PATH
+# --- Terminal title that survives sudo -s ---
+function _title_login_user() {
+  # Prefer the original user when in a sudo shell
+  if [[ -n "$SUDO_USER" ]]; then
+    print -r -- "$SUDO_USER"
+  elif [[ -n "$LOGNAME" ]]; then
+    print -r -- "$LOGNAME"
+  else
+    # final fallback
+    id -un 2>/dev/null
+  fi
+}
 
-# Herd injected PHP binary.
-export PATH="/Users/keith/Library/Application Support/Herd/bin/":$PATH
+function _set_term_title() {
+  case "$TERM" in
+    (xterm*|rxvt*|screen*|tmux*|alacritty*|wezterm*|foot*|kitty*)
+      local u h
+      local isRoot=""
+      [[ $EUID -eq 0 ]] && isRoot=" (root)"
 
-# Herd injected PHP 8.2 configuration.
-export HERD_PHP_82_INI_SCAN_DIR="/Users/keith/Library/Application Support/Herd/config/php/82/"
+      u="$(_title_login_user)"
+      h="${HOST%%.*}"     # short host
+      print -Pn "\e]0;${u}@${h}&{isRoot}: %~\a"
+    ;;
+  esac
+}
 
-
-# Herd injected PHP 8.4 configuration.
-export HERD_PHP_84_INI_SCAN_DIR="/Users/keith/Library/Application Support/Herd/config/php/84/"
-
-
-# Herd injected NVM configuration
-export NVM_DIR="/Users/keith/Library/Application Support/Herd/config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _set_term_title
