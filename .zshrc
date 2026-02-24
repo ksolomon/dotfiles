@@ -112,6 +112,11 @@ alias ohmyzsh="code ~/dotfiles/.oh-my-zsh"
 
 source ~/dotfiles/.zsh_aliases
 
+# Local Alias definitions.
+if [ -f ~/.local_aliases ]; then
+    source ~/.local_aliases
+fi
+
 # --- Terminal title that survives sudo -s ---
 function _title_login_user() {
   # Prefer the original user when in a sudo shell
