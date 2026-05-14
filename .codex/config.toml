@@ -1,8 +1,94 @@
-model = "gpt-5.4"
+model = "gpt-5.5"
 model_reasoning_effort = "medium"
 windows_wsl_setup_acknowledged = true
 personality = "friendly"
 approvals_reviewer = "user"
+[projects.'\\?\C:\Users\ksolo\Herd\wf-list']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Users\ksolo\Herd\events\wp-content\plugins\aa-events']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Users\ksolo\Projects\Misc Projects\CorpusWorkerRPG']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Users\ksolo\Herd\codex']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Users\ksolo\Herd\hodk']
+trust_level = "trusted"
+
+[projects.'v:\bookstack']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Users\ksolo\Herd\svm\wp-content\plugins\AA-Events']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Users\ksolo\Projects\Dev Tools\Herd Bootstrap Script']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Downloads\FNFMB FN Docs']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Herd\nirsm']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Projects\Misc Projects\Moto-Radar']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Users\ksolo\Herd\nirsm1']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Projects\Dev Tools\Docker Backup']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Users\ksolo\Projects\Docker Stuff\IronPad']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Projects\Misc Projects\PHP Codex Usage']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Users\ksolo\Projects\House Projects\MeterTrak']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Projects\Work Projects\NIRSM']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Projects\Homelab Tools\NetTrak']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Herd\rise-consulting\wp-content\themes']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Projects\Games\Epic Solo']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Projects\Work Projects\FNFMB']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Projects\Games\2D6 Dungeon']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Projects\House Projects']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Projects\Work Projects\FNFMB\list-compare']
+trust_level = "trusted"
+
+[projects.'\\?\C:\Users\ksolo\Projects\Dev Tools\IKB']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Herd\basic-wp\wp-content\plugins\logo-soup']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Projects\Temp Stuff\VDI-Starter-v5']
+trust_level = "trusted"
+
+[projects.'C:\Users\ksolo\Projects\AI Stuff\free-claude-code']
+trust_level = "trusted"
+
+[projects.'c:\users\ksolo\projects\wordpress stuff\wp content sync']
+trust_level = "trusted"
 
 [notice]
 hide_full_access_warning = true
@@ -17,6 +103,19 @@ shell_snapshot = true
 apps = true
 steer = true
 multi_agent = true
+collaboration_modes = true
 
 [windows]
 sandbox = "unelevated"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 2
+
+[plugins."superpowers@openai-curated"]
+enabled = true
+
+[otel]
+log_user_prompt = true
+exporter = { otlp-grpc = {
+  endpoint = "http://192.168.2.150:4317",
+}}
