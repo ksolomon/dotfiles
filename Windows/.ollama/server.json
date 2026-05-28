@@ -1,0 +1,15 @@
+{
+  "aliases": [
+    {
+      "alias": "claude-haiku-",
+      "target": "glm-5.1:cloud",
+      "prefix_matching": true
+    },
+    {
+      "alias": "claude-sonnet-",
+      "target": "glm-5.1:cloud",
+      "prefix_matching": true
+    }
+  ],
+  "version": 1
+}

@@ -1,0 +1,17 @@
+{
+  "integrations": {
+    "claude": {
+      "models": [
+        "glm-5.1:cloud"
+      ],
+      "aliases": {
+        "primary": "glm-5.1:cloud"
+      }
+    },
+    "codex": {
+      "models": [
+        "glm-5.1:cloud"
+      ]
+    }
+  }
+}
